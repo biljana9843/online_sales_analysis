@@ -16,6 +16,14 @@ class ProductManager:
     def calculate_total_value(self):
         total_value = sum(product.price * product.quantity for product in self.products)
         return f"Ukupna vrednost svih proizvoda: {total_value} RSD"
+    
+    def remove_product_by_name(self, name):
+        for product in self.products:
+            if product.name == name:
+                self.products.remove(product)
+                return f"Proizvod '{name}' je uklonjen."
+   
+
 
 # Primer korišćenja:
 if __name__ == "__main__":
